@@ -1,0 +1,22 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Oneilbroz T-shirts</h1>
+    <p>Fictional brands to amuse and befuddle</p>
+</div>
+
+<div class="row">
+    @foreach (var item in Model.Items)
+    {
+        <div class="card col-4 m-3">
+            <div class="card-body">
+                <img src="@item.Thumbnail" title="image" class="card-img-top"/>
+                <h5 class="card-title">@item.Name</h5>
+            </div>
+        </div>
+    }
+</div>
