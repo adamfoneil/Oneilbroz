@@ -6,17 +6,35 @@
 
 <div class="text-center">
     <h1 class="display-4">Oneilbroz T-shirts</h1>
-    <p>Fictional brands to amuse and befuddle</p>
+    <h2 class="display-6">Fictional brands to amuse and befuddle</h2>
 </div>
 
-<div class="row">
+<form method="post" data-ajax="true" asp-page-handler="Email">
+    <div class="mx-auto my-4" style="width:500px">
+        <div class="text-center">
+            Be notified when we go live:
+        </div>
+        <div class="d-flex align-items-center">
+            <input type="email" name="Email" placeholder="Your email" class="form-control" required="required" />
+            <button class="btn btn-outline-primary">Submit</button>
+        </div>
+    </div>       
+</form>
+
+<div class="row row-cols-3">
     @foreach (var item in Model.Items)
     {
-        <div class="card col-4 m-3">
-            <div class="card-body">
-                <img src="@item.Thumbnail" title="image" class="card-img-top"/>
-                <h5 class="card-title">@item.Name</h5>
+        <div class="col">
+            <div class="card m-2">
+                <div class="card-body">
+                    <img src="@item.Thumbnail" title="image" class="card-img-top" />
+                    <h5 class="card-title mt-2">@item.Name</h5>
+                    @if (!string.IsNullOrEmpty(item.Description))
+                    {
+                        <p>@item.Description</p>
+                    }
+                </div>
             </div>
-        </div>
+        </div>        
     }
 </div>
