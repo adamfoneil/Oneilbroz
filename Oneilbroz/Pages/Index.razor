@@ -5,3 +5,25 @@
 <h1 class="text-center">Oneilbroz T-shirts</h1>
 
 <h2 class="text-center">Fictional brands to amuse and befuddle</h2>
+
+<EditForm Model="email" OnValidSubmit="OnEmailSubmit">
+    <DataAnnotationsValidator/>
+    <div class="mb-3 mx-auto" style="width:450px">
+        <label for="email" class="form-label text-center">To be notified when we go live and other occasional updates:</label>
+        <div class="d-flex align-items-center">
+            <input type="email" class="form-control me-2" id="email" placeholder="your email" @bind-value="email.Value" />
+            <button class="btn btn-primary ms-2">Submit</button>
+        </div>
+        <ValidationMessage For="@(() => email.Value)"/>
+    </div>
+</EditForm>
+
+@code {
+    Email email = new();
+
+    async Task OnEmailSubmit()
+    {
+        Console.WriteLine($"Email entered: {email.Value}");
+        email = new();
+    }
+}

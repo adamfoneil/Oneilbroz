@@ -12,7 +12,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\data\" />
+    <Folder Include="wwwroot\data\items\howdy-howdy\" />
+    <Folder Include="wwwroot\data\items\liamargus\" />
+    <Folder Include="wwwroot\data\items\newbryle\" />
+    <Folder Include="wwwroot\data\items\leeboy\" />
+    <Folder Include="wwwroot\data\items\arlen-wichaway\" />
+    <Folder Include="wwwroot\data\items\verdant-compunction\" />
+    <Folder Include="wwwroot\data\items\parsh-hightrouser\" />
+    <Folder Include="wwwroot\data\items\reallyGeorge\" />
+    <Folder Include="wwwroot\data\items\yespar\" />
   </ItemGroup>
 
 </Project>
